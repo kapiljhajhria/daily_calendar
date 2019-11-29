@@ -10,21 +10,19 @@ class _CalendarReportState extends State<CalendarReport>
     with SingleTickerProviderStateMixin {
   AnimationController myController;
   Animation myAnimation;
-  Animation animation;
 
   @override
   void initState() {
     myController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 5000));
-    myAnimation = Tween(begin: 0.1, end: 1.0).animate(myController);
-    // TODO: implement initState
-    animation = ColorTween(
+        vsync: this, duration: Duration(milliseconds: 3000));
+    myAnimation = ColorTween(
       begin: Colors.green,
       end: Colors.red,
     ).animate(myController)
       ..addListener(() {
         setState(() {});
       });
+    // TODO: implement initState
     myController.forward();
     super.initState();
   }
@@ -53,7 +51,7 @@ class _CalendarReportState extends State<CalendarReport>
           ) {
             return Center(
               child: Container(
-                  color: animation.value,
+                  color: myAnimation.value,
                   child: Text(day.day.toString())),
             );
           },

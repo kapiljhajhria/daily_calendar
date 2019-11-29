@@ -19,8 +19,8 @@ class _CalendarReportState extends State<CalendarReport>
     myAnimation = Tween(begin: 0.1, end: 1.0).animate(myController);
     // TODO: implement initState
     animation = ColorTween(
-      begin: Colors.grey,
-      end: Colors.blue,
+      begin: Colors.green,
+      end: Colors.red,
     ).animate(myController)
       ..addListener(() {
         setState(() {});
